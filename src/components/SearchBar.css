@@ -1,0 +1,130 @@
+/* ============================================
+   SEARCH BAR STYLES
+   ============================================
+   Clean, Apple-inspired search interface
+   ============================================ */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs);
+  transition: all var(--transition-fast);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Focus state - subtle highlight */
+.search-bar:focus-within {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(41, 151, 255, 0.1);
+}
+
+/* Search icon */
+.search-icon {
+  font-size: var(--font-size-lg);
+  padding-left: var(--spacing-sm);
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+}
+
+/* Search input field */
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  padding: var(--spacing-sm);
+  outline: none;
+  font-family: inherit;
+}
+
+/* Placeholder styling */
+.search-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Clear button (X) */
+.clear-button {
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: var(--font-size-lg);
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  width: 28px;
+  height: 28px;
+}
+
+.clear-button:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+/* Search button */
+.search-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.search-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.search-button:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-wrap: wrap;
+  }
+  
+  .search-input {
+    min-width: 200px;
+  }
+  
+  .search-button {
+    flex: 1;
+    width: 100%;
+    margin-top: var(--spacing-xs);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .search-icon {
+    font-size: var(--font-size-base);
+  }
+  
+  .search-input {
+    font-size: var(--font-size-sm);
+  }
+  
+  .search-input::placeholder {
+    font-size: var(--font-size-xs);
+  }
+}

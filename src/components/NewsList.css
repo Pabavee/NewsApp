@@ -1,0 +1,128 @@
+/* ============================================
+   NEWS LIST STYLES
+   ============================================
+   Responsive grid layout for news cards
+   Uses CSS Grid for flexible, responsive design
+   ============================================ */
+
+.news-list {
+  display: grid;
+  /* Responsive grid:
+     - Minimum column width: 300px
+     - Maximum: 1fr (equal distribution)
+     - Auto-fit: Creates as many columns as possible
+  */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+.news-list-empty {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  color: var(--text-secondary);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.5;
+}
+
+.news-list-empty p {
+  font-size: var(--font-size-lg);
+  color: var(--text-tertiary);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Large Desktop (1400px and up) - 3 columns */
+@media (min-width: 1400px) {
+  .news-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop (1024px - 1399px) - 3 columns */
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .news-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet (768px - 1023px) - 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .news-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+/* Mobile (below 768px) - 1 column */
+@media (max-width: 767px) {
+  .news-list {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 480px) {
+  .news-list {
+    gap: var(--spacing-sm);
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+  }
+  
+  .news-list-empty p {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* ============================================
+   LOADING STATE ANIMATION
+   ============================================
+   Used when cards are being loaded
+   ============================================ */
+
+/* Fade-in animation for cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.news-list > * {
+  animation: fadeIn 0.5s ease-out;
+  /* Stagger animation for each card */
+  animation-fill-mode: both;
+}
+
+/* Stagger delay for each card */
+.news-list > *:nth-child(1) { animation-delay: 0.05s; }
+.news-list > *:nth-child(2) { animation-delay: 0.1s; }
+.news-list > *:nth-child(3) { animation-delay: 0.15s; }
+.news-list > *:nth-child(4) { animation-delay: 0.2s; }
+.news-list > *:nth-child(5) { animation-delay: 0.25s; }
+.news-list > *:nth-child(6) { animation-delay: 0.3s; }
+
+/* Disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .news-list > * {
+    animation: none;
+  }
+}

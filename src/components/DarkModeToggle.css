@@ -1,0 +1,111 @@
+/* ============================================
+   DARK MODE TOGGLE STYLES
+   ============================================
+   Clean toggle button with smooth transitions
+   ============================================ */
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xs) var(--spacing-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+/* Hover effect */
+.dark-mode-toggle:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+/* Active/pressed state */
+.dark-mode-toggle:active {
+  transform: translateY(0);
+}
+
+/* Focus state for accessibility */
+.dark-mode-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   ICON
+   ============================================ */
+
+.toggle-icon {
+  font-size: var(--font-size-lg);
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition-base);
+}
+
+/* Rotate icon on toggle for fun effect */
+.dark-mode-toggle:hover .toggle-icon {
+  transform: rotate(20deg);
+}
+
+/* ============================================
+   TEXT LABEL
+   ============================================ */
+
+.toggle-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.dark-mode-toggle:hover .toggle-text {
+  color: var(--text-primary);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Hide text on small screens to save space */
+@media (max-width: 480px) {
+  .toggle-text {
+    display: none;
+  }
+  
+  .dark-mode-toggle {
+    padding: var(--spacing-xs);
+    min-width: 40px;
+    min-height: 40px;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .dark-mode-toggle {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .dark-mode-toggle,
+  .toggle-icon,
+  .toggle-text {
+    transition: none;
+  }
+  
+  .dark-mode-toggle:hover .toggle-icon {
+    transform: none;
+  }
+}

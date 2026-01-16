@@ -1,192 +1,70 @@
-# NewsAPI Dashboard
+# Getting Started with Create React App
 
-A fully responsive, Apple-inspired news dashboard built with React and Node.js that integrates with NewsAPI to display news articles with advanced filtering capabilities.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🎯 Features
+## Available Scripts
 
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Apple-Style UI**: Clean, minimal interface with card-based layouts
-- **Keyword Search**: Search for articles by any keyword or phrase
-- **Advanced Filters**: Filter by date, language, and news source
-- **Dark Mode**: Toggle between light and dark themes
-- **Secure API Proxy**: Backend protects your API key
-- **Loading States**: Professional loading indicators
-- **Error Handling**: Graceful error messages and API limit management
+In the project directory, you can run:
 
-## 🛠️ Tech Stack
+### `npm start`
 
-### Frontend
-- React 18
-- Plain CSS with CSS Modules
-- Fetch API for HTTP requests
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Backend
-- Node.js
-- Express.js
-- CORS enabled
-- Environment variables for security
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## 📁 Project Structure
+### `npm test`
 
-```
-NewsAPI-Dashboard/
-├── backend/
-│   ├── server.js           # Express server and API routes
-│   ├── .env               # Environment variables (API key)
-│   ├── package.json       # Backend dependencies
-│   └── .gitignore        # Git ignore file
-├── frontend/
-│   ├── public/
-│   │   └── index.html    # HTML template
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── SearchBar.js      # Search input component
-│   │   │   ├── Filters.js        # Filter options component
-│   │   │   ├── NewsCard.js       # Individual news card
-│   │   │   ├── NewsList.js       # News grid container
-│   │   │   ├── DarkModeToggle.js # Dark mode switch
-│   │   │   └── LoadingSpinner.js # Loading indicator
-│   │   ├── App.js        # Main application component
-│   │   ├── App.css       # Main styles
-│   │   └── index.js      # React entry point
-│   ├── package.json      # Frontend dependencies
-│   └── .gitignore       # Git ignore file
-└── README.md            # This file
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 🚀 Installation & Setup
+### `npm run build`
 
-### Prerequisites
-- Node.js (v14 or higher)
-- npm (comes with Node.js)
-- NewsAPI key from https://newsapi.org
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Step 1: Clone or Download
-Download all project files to your computer.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Step 2: Backend Setup
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```bash
-# Navigate to backend folder
-cd backend
+### `npm run eject`
 
-# Install dependencies
-npm install
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-# The .env file is already configured with your API key
-# If you need to change it, edit backend/.env
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Step 3: Frontend Setup
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-```bash
-# Navigate to frontend folder (from project root)
-cd frontend
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-# Install dependencies
-npm install
-```
+## Learn More
 
-### Step 4: Run the Application
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-**Terminal 1 - Start Backend Server:**
-```bash
-cd backend
-npm start
-```
-Backend will run on http://localhost:5000
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-**Terminal 2 - Start Frontend:**
-```bash
-cd frontend
-npm start
-```
-Frontend will open automatically at http://localhost:3000
+### Code Splitting
 
-## 📖 How to Use
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-1. **Search**: Enter keywords in the search bar (e.g., "technology", "sports")
-2. **Filter by Date**: Select "Today", "This Week", or "This Month"
-3. **Filter by Language**: Choose from English, Spanish, French, German, etc.
-4. **Filter by Source**: Select specific news sources
-5. **Dark Mode**: Click the moon/sun icon to toggle themes
-6. **Read Articles**: Click "Read Full Article" to open the original source
+### Analyzing the Bundle Size
 
-## 🎨 Design Principles
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-This dashboard follows Apple News design philosophy:
-- **Whitespace**: Generous spacing for readability
-- **Typography**: Clear hierarchy with large headlines
-- **Cards**: Content organized in clean, bordered cards
-- **Simplicity**: No clutter, focus on content
-- **Consistency**: Uniform spacing and styling throughout
+### Making a Progressive Web App
 
-## ⚠️ API Limitations (Free Tier)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-NewsAPI free tier has the following limits:
-- 100 requests per day
-- Only articles from the last 30 days
-- Development use only
+### Advanced Configuration
 
-The app handles these limitations by:
-- Showing helpful error messages when limits are reached
-- Caching results to reduce API calls
-- Displaying clear feedback to users
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## 🔒 Security
+### Deployment
 
-- API key is stored in backend `.env` file (never exposed to frontend)
-- Backend acts as a proxy to protect credentials
-- `.gitignore` prevents sensitive files from being committed
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## 🚧 Future Improvements
+### `npm run build` fails to minify
 
-- Pagination for more results
-- Save favorite articles
-- Category-based browsing
-- Share articles on social media
-- PWA support for offline access
-- Article bookmarking with localStorage
-
-## 📝 Assignment Compliance
-
-This project fulfills all assignment requirements:
-✅ API key from NewsAPI
-✅ Search by keyword/phrase
-✅ Filter by date published
-✅ Filter by source domain
-✅ Filter by language
-✅ Proper user interface (React frontend)
-✅ Backend API handling (Node.js/Express)
-✅ Form for user input
-✅ Readable display format with headlines, descriptions, and links
-
-## 🐛 Troubleshooting
-
-**Backend won't start:**
-- Ensure Node.js is installed: `node --version`
-- Check that port 5000 is not in use
-- Verify .env file exists in backend folder
-
-**Frontend won't start:**
-- Ensure backend is running first
-- Check that port 3000 is available
-- Clear npm cache: `npm cache clean --force`
-
-**No news appearing:**
-- Check browser console for errors (F12)
-- Verify backend is running on port 5000
-- Check API key is valid in backend/.env
-
-**API limit reached:**
-- Wait 24 hours for limit reset
-- Consider upgrading NewsAPI plan
-- Use more specific search terms to reduce calls
-
-## 📄 License
-
-This project is created for educational purposes as part of a university assignment.
-
-## 👨‍💻 Author
-
-Created as part of News App Creation assignment (Due: January 16, 2026)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
